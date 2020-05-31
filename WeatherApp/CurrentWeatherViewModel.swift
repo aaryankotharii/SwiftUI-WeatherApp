@@ -11,7 +11,6 @@ import Combine
 
 final class CurrentWeatherViewModel : ObservableObject{
     @Published var current : Weather?
-    
     init() {
         self.fetch()
     }
