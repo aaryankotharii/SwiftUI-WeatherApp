@@ -18,6 +18,7 @@
 		5B36D9222483DC7500CCA132 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D9212483DC7500CCA132 /* CurrentWeatherViewModel.swift */; };
 		5B36D9242483E0A900CCA132 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D9232483E0A800CCA132 /* CurrentWeather.swift */; };
 		5B36D9262483ED2200CCA132 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D9252483ED2200CCA132 /* Extensions.swift */; };
+		5B36D9282483FD6500CCA132 /* WeeklyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D9272483FD6500CCA132 /* WeeklyWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5B36D9212483DC7500CCA132 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		5B36D9232483E0A800CCA132 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		5B36D9252483ED2200CCA132 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5B36D9272483FD6500CCA132 /* WeeklyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				5B36D9212483DC7500CCA132 /* CurrentWeatherViewModel.swift */,
 				5B36D9232483E0A800CCA132 /* CurrentWeather.swift */,
 				5B36D9252483ED2200CCA132 /* Extensions.swift */,
+				5B36D9272483FD6500CCA132 /* WeeklyWeather.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				5B36D91E248394A800CCA132 /* Weather.swift in Sources */,
 				5B36D90A2483893100CCA132 /* AppDelegate.swift in Sources */,
 				5B36D90C2483893100CCA132 /* SceneDelegate.swift in Sources */,
+				5B36D9282483FD6500CCA132 /* WeeklyWeather.swift in Sources */,
 				5B36D9262483ED2200CCA132 /* Extensions.swift in Sources */,
 				5B36D9242483E0A900CCA132 /* CurrentWeather.swift in Sources */,
 				5B36D90E2483893100CCA132 /* ContentView.swift in Sources */,
