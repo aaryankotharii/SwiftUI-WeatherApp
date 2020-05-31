@@ -14,7 +14,7 @@ struct CurrentWeather: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
-            Text("Today")
+            Text("Today in \(weather?.name ?? "Unknown")")
                 .font(.title)
                 .foregroundColor(.white)
             .bold()
