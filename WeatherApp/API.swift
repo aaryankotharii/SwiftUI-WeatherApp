@@ -32,7 +32,7 @@ class API {
     }
     
     
-    class func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
+    class func getWeather<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 DispatchQueue.main.async {
@@ -56,13 +56,17 @@ class API {
     }
     
     
-    class func fetchCurrentWeather(by city : String, onSuccess : (Weather)->()){
+    class func fetchCurrentWeather(by city : String, onSuccess : @escaping (Weather)->()){
         let url = Endpoints.daily(city: city).url
-        
+        getWeather(url: url, responseType: Weather.self) { (result, error) in
+            if let error = error{
+                print(error.localizedDescription)
+                return
+            }
+            if let result = result {
+            onSuccess(result)
+            }
+        }
     }
 }
 
-enum Units : String{
-    case imperial
-    case metric
-}
