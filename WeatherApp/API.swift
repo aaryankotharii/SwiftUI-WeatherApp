@@ -56,16 +56,15 @@ class API {
     }
     
     
-    class func fetchCurrentWeather(by city : String, onSuccess : @escaping (Weather)->()){
+    class func fetchCurrentWeather(by city : String, completion : @escaping (Weather?)->()){
         let url = Endpoints.daily(city: city).url
         getWeather(url: url, responseType: Weather.self) { (result, error) in
             if let error = error{
                 print(error.localizedDescription)
+                completion(nil)
                 return
             }
-            if let result = result {
-            onSuccess(result)
-            }
+            completion(result)
         }
     }
 }

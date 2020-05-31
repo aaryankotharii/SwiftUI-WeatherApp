@@ -10,5 +10,17 @@ import Foundation
 import Combine
 
 final class CurrentWeatherViewModel : ObservableObject{
+    @Published var current : Weather?
     
+    init() {
+        self.fetch()
+    }
+}
+
+extension CurrentWeatherViewModel {
+    func fetch(_ city : String = "mumbai"){
+        API.fetchCurrentWeather(by: city) {
+            self.current = $0
+        }
+    }
 }
