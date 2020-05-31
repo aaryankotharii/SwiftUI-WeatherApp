@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var weather = CurrentWeatherViewModel()
+    
     var body: some View {
+        VStack{
+            Text(weather.current?.name ?? "")
         Text("Hello, World!")
+        }
     }
 }
 
