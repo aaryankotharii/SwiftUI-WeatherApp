@@ -38,10 +38,3 @@ struct CurrentWeather_Previews: PreviewProvider {
         CurrentWeather()
     }
 }
-
-
-extension Double {
-    var round : Double{
-        return self
-    }
-}

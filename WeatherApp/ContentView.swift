@@ -25,7 +25,7 @@ struct ContentView: View {
                 Text("Week").tag(1)
             }.pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal)
-        }
+        }.frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
     }
 }
 
