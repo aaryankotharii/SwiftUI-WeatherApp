@@ -17,13 +17,15 @@ class API {
         static let appid = "9b8cb5423c57be885f14f8033b16ca29"
         
         case daily(city:String,units:Units)
-        
         var stringValue : String {
             switch self {
                 
             case .daily(city: let city, units: let units):
                 return   Endpoints.dailyBase + "/weather?q=\(city)&APPID=" + Endpoints.appid + "&units=\(units)"
             }
+        }
+        var url : URL {
+            return URL(string: self.stringValue)!
         }
     }
     
