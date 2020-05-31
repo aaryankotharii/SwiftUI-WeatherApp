@@ -25,9 +25,9 @@ class API {
             }
         }
         var url : URL {
-            return URL(string: self.stringValue)!
-        }
-    }
+             return URL(string: self.stringValue)!
+         }
+    }3
     
     class func fetchCurrentWeather(by city : String, onSuccess : (Weather)->()){
         

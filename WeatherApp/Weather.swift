@@ -19,7 +19,7 @@ struct Weather: Codable {
 }
 
 struct Coord : Codable {
-    let lat, long : Double
+    let lon, lat : Double
 }
 
 struct WeatherData : Codable, Identifiable {
@@ -43,5 +43,6 @@ struct Clouds : Codable{
 
 struct Sys: Codable {
     let type, id, sunrise, sunset : Int
-    let message, country : String
+    let country : String
 }
+
