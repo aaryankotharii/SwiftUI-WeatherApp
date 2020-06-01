@@ -7,15 +7,18 @@
 //
 
 import Foundation
-import MapKit
 
+//MARK:- Networking Class
 class API {
     
+    /// `endpoints` for  rest api
     enum Endpoints {
         
         static let dailyBase = "http://api.openweathermap.org/data/2.5"
         static let weeklyBase = "https://api.openweathermap.org/data/2.5/onecall"
-        static let appid = "9b8cb5423c57be885f14f8033b16ca29"
+        
+        //MARK:- get your appid here https://openweathermap.org/api
+        static let appid = "YOUR_APPID_HERE"
         
         case daily(city:String)
         case weekly(lat:Double,long:Double,dt:Int)
@@ -24,7 +27,7 @@ class API {
             
             switch self {
             case .daily(city: let city):
-                return   Endpoints.dailyBase + "/weather?q=\(city)&APPID=" + Endpoints.appid + "&units=metric"
+                return   Endpoints.dailyBase + "/weather?q=\(city.trimmingCharacters(in: .whitespaces))&APPID=" + Endpoints.appid + "&units=metric"
             case .weekly(let lat , let long, let dt):
                 return Endpoints.weeklyBase + "/timemachine?lat=\(lat)&lon=\(long)&dt=\(dt)&appid=" + Endpoints.appid + "&units=metric"
             }
@@ -35,8 +38,8 @@ class API {
         }
     }
     
-    
-    class func getWeather<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
+    //MARK:- Get function
+    class func getWeather<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 DispatchQueue.main.async {
@@ -55,13 +58,9 @@ class API {
             }
         }
         task.resume()
-        
-        return task
     }
     
-    
-    
-    
+    /// Current Weather
     class func fetchCurrentWeather(by city : String, completion : @escaping (Weather?)->()){
         let url = Endpoints.daily(city: city).url
         getWeather(url: url, responseType: Weather.self) { (result, error) in
@@ -74,17 +73,21 @@ class API {
         }
     }
     
+    /// Past 5 days Weather
     class func fetchWeeklyWeather(by city : String, completion : @escaping ([WeeklyWeather])->()){
+        /// Convert City to coordinates
         MapClient.TextToLocation(city) { (location, error) in
             if let  error = error{
                 print(error.localizedDescription)
                 return
             }
+            
             guard let location = location else { return }
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
             var results = [WeeklyWeather]()
             for dates in Date().weekData{
+                // fetch data
                 API.getWeather(url: Endpoints.weekly(lat: lat, long: long, dt: dates).url, responseType: WeeklyWeather.self) { (result, error) in
                     if let result = result{
                     results.append(result)
@@ -93,7 +96,7 @@ class API {
                         return
                     }
                     } else {
-                        print(error?.localizedDescription)
+                        print(error!.localizedDescription)
                     }
                 }
             }

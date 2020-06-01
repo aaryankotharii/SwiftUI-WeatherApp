@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-
+// Mark:  - Converts text to CLLocation
 class MapClient {
     class func TextToLocation(_ address : String, completion: @escaping (CLLocation?, Error?) -> Void){
         

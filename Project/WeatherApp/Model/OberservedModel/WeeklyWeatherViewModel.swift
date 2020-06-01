@@ -10,7 +10,6 @@ import SwiftUI
 import Combine
 
 class WeeklyWeatherViewModel : ObservableObject {
-    
     @Published var weather : [WeeklyWeather]?
     
     init() {
@@ -18,6 +17,7 @@ class WeeklyWeatherViewModel : ObservableObject {
     }
 }
 
+/// fetch function
 extension WeeklyWeatherViewModel {
     func fetch(by city : String = "mumbai"){
         API.fetchWeeklyWeather(by: city) {

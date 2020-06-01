@@ -12,10 +12,13 @@ import Combine
 final class CurrentWeatherViewModel : ObservableObject{
     @Published var current : Weather?
     init() {
-        self.fetch()
+        DispatchQueue.main.async {
+            self.fetch()
+        }
     }
 }
 
+/// fetch function
 extension CurrentWeatherViewModel {
     func fetch(_ city : String = "mumbai"){
         API.fetchCurrentWeather(by: city) {
