@@ -9,7 +9,7 @@
 import Foundation
 
 struct WeeklyWeather : Codable {
-    let  lat , lon : Double
+    let lat, lon : Double
     let current : Current
 }
 
