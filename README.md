@@ -10,7 +10,7 @@
 
 ## Screenshots 📷
  <p float="left">
- <img src ="Assets/gif.gif" width = "230" hspace="30"  />
+ <img src ="Assets/gif.gif" width = "250" hspace="30"  />
  <img src ="Assets/12.png" width = "600"  /> 
  </p>
  
