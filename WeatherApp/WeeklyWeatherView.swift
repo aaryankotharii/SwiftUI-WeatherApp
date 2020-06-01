@@ -19,7 +19,10 @@ struct WeeklyWeatherView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
                 ForEach(weeklyWeather) {  data in
-                    Text("\(data.lat)")
+                    CardView(weeklyWeather: data)
+                        .frame(width: self.width, height: self.value == 0 ? 0 : self.height * 0.6)
+                        .animation(.easeInOut(duration: 0.5))
+                    //.modifier(CardViewModifier)
                 }
             }
         }
