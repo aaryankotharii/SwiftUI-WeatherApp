@@ -20,6 +20,8 @@
 		5B36D9262483ED2200CCA132 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D9252483ED2200CCA132 /* Extensions.swift */; };
 		5B36D9282483FD6500CCA132 /* WeeklyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D9272483FD6500CCA132 /* WeeklyWeather.swift */; };
 		5B36D92A2484AAA000CCA132 /* MapClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D9292484AA9F00CCA132 /* MapClient.swift */; };
+		5B36D92C2484B3DD00CCA132 /* WeeklyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D92B2484B3DD00CCA132 /* WeeklyWeatherView.swift */; };
+		5B36D92E2484B67400CCA132 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36D92D2484B67400CCA132 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		5B36D9252483ED2200CCA132 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5B36D9272483FD6500CCA132 /* WeeklyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeather.swift; sourceTree = "<group>"; };
 		5B36D9292484AA9F00CCA132 /* MapClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClient.swift; sourceTree = "<group>"; };
+		5B36D92B2484B3DD00CCA132 /* WeeklyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherView.swift; sourceTree = "<group>"; };
+		5B36D92D2484B67400CCA132 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				5B36D9252483ED2200CCA132 /* Extensions.swift */,
 				5B36D9272483FD6500CCA132 /* WeeklyWeather.swift */,
 				5B36D9292484AA9F00CCA132 /* MapClient.swift */,
+				5B36D92B2484B3DD00CCA132 /* WeeklyWeatherView.swift */,
+				5B36D92D2484B67400CCA132 /* CardView.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -173,9 +179,11 @@
 				5B36D9282483FD6500CCA132 /* WeeklyWeather.swift in Sources */,
 				5B36D9262483ED2200CCA132 /* Extensions.swift in Sources */,
 				5B36D92A2484AAA000CCA132 /* MapClient.swift in Sources */,
+				5B36D92C2484B3DD00CCA132 /* WeeklyWeatherView.swift in Sources */,
 				5B36D9242483E0A900CCA132 /* CurrentWeather.swift in Sources */,
 				5B36D90E2483893100CCA132 /* ContentView.swift in Sources */,
 				5B36D9202483974000CCA132 /* API.swift in Sources */,
+				5B36D92E2484B67400CCA132 /* CardView.swift in Sources */,
 				5B36D9222483DC7500CCA132 /* CurrentWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

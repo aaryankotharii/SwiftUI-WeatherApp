@@ -83,9 +83,14 @@ class API {
             guard let location = location else { return }
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
+            var results = [WeeklyWeather?]()
             for dates in Date().weekData{
                 API.getWeather(url: Endpoints.weekly(lat: lat, long: long, dt: dates).url, responseType: WeeklyWeather.self) { (result, error) in
-                    print(result)
+                    results.append(result)
+                    if (results.count == 5){
+                        completion(results)
+                        return
+                    }
                 }
             }
         }
@@ -94,13 +99,4 @@ class API {
 
 
 
-extension Date {
-    var weekData : [Int]{
-        let days = [-1,-2,-3,-4,-5]
-        let value = days.map {
-            Int(Calendar.current.date(byAdding: .day, value: $0, to: Date())!.timeIntervalSince1970)
-        }
-        
-        return value
-    }
-}
+

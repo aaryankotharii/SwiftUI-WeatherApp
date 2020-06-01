@@ -13,3 +13,13 @@ extension Double {
         return Int(self)
     }
 }
+
+extension Date {
+    var weekData : [Int]{
+        let days = [-1,-2,-3,-4,-5]
+        let value = days.map {
+            Int(Calendar.current.date(byAdding: .day, value: $0, to: Date())!.timeIntervalSince1970)
+        }
+        return value
+    }
+}
