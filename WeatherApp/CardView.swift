@@ -16,7 +16,7 @@ struct CardView: View {
                 .font(.title)
                 .foregroundColor(.white)
             HStack{
-                Text(weeklyWeather.current.temp.round.toString)
+                Text(weeklyWeather.current.temp.round.toString + "°")
                 Text(weeklyWeather.current.feels_like.round.toString)
                     .font(.title)
                     .foregroundColor(.white)
