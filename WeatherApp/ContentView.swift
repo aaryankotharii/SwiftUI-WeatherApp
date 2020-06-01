@@ -16,8 +16,14 @@ struct ContentView: View {
     
     private var height : CGFloat = UIScreen.main.bounds.height
     
+    @State var city : String = ""
+    
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
+            TextField("Enter your city", text: $city){
+                self.weather.fetch(self.city)
+                self.weeklyWeather.fetch(by: self.city)
+            }.padding(.horizontal)
             GeometryReader { gr in
                 CurrentWeather(weather: self.weather.current, height: self.selected == 0 ? gr.size.height : (gr.size.height*0.75)).modifier(currentViewModifier()).animation(.easeInOut(duration: 0.5))
             }

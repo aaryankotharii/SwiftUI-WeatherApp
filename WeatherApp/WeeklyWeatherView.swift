@@ -22,7 +22,7 @@ struct WeeklyWeatherView: View {
                     CardView(weeklyWeather: data)
                         .frame(width: self.width, height: self.value == 0 ? 0 : self.height * 0.6)
                         .animation(.easeInOut(duration: 0.5))
-                    .modifier(CardViewModifier())
+                        .modifier(CardViewModifier())
                         //.modifier(CardViewModifier(TimeInterval(data.current.dt)))
                 }
             }
