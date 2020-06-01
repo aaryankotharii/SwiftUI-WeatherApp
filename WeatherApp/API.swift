@@ -74,7 +74,7 @@ class API {
         }
     }
     
-    class func fetchWeeklyWeather(by city : String, completion : @escaping ([WeeklyWeather?])->()){
+    class func fetchWeeklyWeather(by city : String, completion : @escaping ([WeeklyWeather])->()){
         MapClient.TextToLocation(city) { (location, error) in
             if let  error = error{
                 print(error.localizedDescription)
@@ -83,10 +83,10 @@ class API {
             guard let location = location else { return }
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
-            var results = [WeeklyWeather?]()
+            var results = [WeeklyWeather]()
             for dates in Date().weekData{
                 API.getWeather(url: Endpoints.weekly(lat: lat, long: long, dt: dates).url, responseType: WeeklyWeather.self) { (result, error) in
-                    results.append(result)
+                    results.append(result!)
                     if (results.count == 5){
                         completion(results)
                         return

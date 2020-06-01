@@ -11,7 +11,7 @@ import Combine
 
 class WeeklyWeatherViewModel : ObservableObject {
     
-    @Published var weather : [WeeklyWeather?]?
+    @Published var weather : [WeeklyWeather]?
     
     init() {
         self.fetch()
@@ -21,6 +21,7 @@ class WeeklyWeatherViewModel : ObservableObject {
 extension WeeklyWeatherViewModel {
     func fetch(by city : String = "mumbai"){
         API.fetchWeeklyWeather(by: city) {
+            print($0)
             self.weather = $0
         }
     }

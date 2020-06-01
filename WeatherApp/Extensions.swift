@@ -29,3 +29,27 @@ extension Int {
         return String(self)
     }
 }
+
+extension DateFormatter{
+    convenience init(dateFormat : String){
+        self.init()
+        self.dateFormat = dateFormat
+    }
+}
+
+extension Date {
+    
+    static func dateFromUnixTimeStamp(_ timestamp : TimeInterval)->Date {
+        return Date(timeIntervalSince1970: timestamp)
+    }
+    
+    var day : String {
+        let dateformatter = DateFormatter(dateFormat: "EEEE")
+        return dateformatter.string(from: self)
+    }
+    
+    func dayOfTheWeekFromTimeStamp(_ timestamp : TimeInterval)-> String {
+        let date = Date.dateFromUnixTimeStamp(timestamp)
+        return date.day
+    }
+}

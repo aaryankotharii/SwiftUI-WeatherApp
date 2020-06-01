@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WeeklyWeatherView: View {
-    var weeklyWeather : [WeeklyWeather] = []
+    var weeklyWeather : [WeeklyWeather]
     var value : Int = 0
     var height :CGFloat = 0
     var width = UIScreen.main.bounds.width/2
@@ -26,12 +26,9 @@ struct WeeklyWeatherView: View {
                 }
             }
         }
-    }
-}
-
-struct WeeklyWeatherView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeeklyWeatherView()
+        .padding(20)
+        .frame(height: self.value == 0 ? 0 : self.height * 0.65)
+        .animation(.easeInOut(duration: 0.5))
     }
 }
 
