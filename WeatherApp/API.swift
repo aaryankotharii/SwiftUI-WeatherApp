@@ -26,7 +26,7 @@ class API {
             case .daily(city: let city):
                 return   Endpoints.dailyBase + "/weather?q=\(city)&APPID=" + Endpoints.appid + "&units=metric"
             case .weekly(let lat , let long, let dt):
-                return Endpoints.dailyBase + "/timemachine?lat=\(lat)&lon=\(long)&dt=\(dt)&appid=" + Endpoints.appid + "&units=metric"
+                return Endpoints.weeklyBase + "/timemachine?lat=\(lat)&lon=\(long)&dt=\(dt)&appid=" + Endpoints.appid + "&units=metric"
             }
         }
         
