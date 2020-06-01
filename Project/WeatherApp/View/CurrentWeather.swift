@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct CurrentWeather: View {
     var weather : Weather?
     var height : CGFloat = 0

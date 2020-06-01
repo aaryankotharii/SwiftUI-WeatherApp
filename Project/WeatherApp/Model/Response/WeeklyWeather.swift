@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 struct WeeklyWeather : Codable, Identifiable {
     let id = UUID()
     let lat, lon : Double

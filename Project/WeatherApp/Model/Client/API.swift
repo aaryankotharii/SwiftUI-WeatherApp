@@ -11,6 +11,7 @@ import Foundation
 //MARK:- Networking Class
 class API {
     
+    
     /// `endpoints` for  rest api
     enum Endpoints {
         

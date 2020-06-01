@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct WeeklyWeatherView: View {
     var weeklyWeather : [WeeklyWeather]
     var value : Int = 0

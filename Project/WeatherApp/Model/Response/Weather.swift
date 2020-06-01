@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 struct Weather: Codable {
     let id, timezone, cod, dt : Int
     let name , base : String
