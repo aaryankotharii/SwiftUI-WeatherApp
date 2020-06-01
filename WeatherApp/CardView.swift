@@ -28,4 +28,21 @@ struct CardView: View {
     }
 }
 
+struct CardViewModifier : ViewModifier {
+    var timeStamp : TimeInterval
+    init(_ timestamp : TimeInterval) {
+        self.timeStamp = timestamp
+    }
+    
+    func body(content : Content) -> some View{
+        content
+            .background(LinearGradient(gradient: Gradient(colors: [.blue,.yellow]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(20)
+    }
+    
+    private var day : String{
+        return "dayOfWeekFromTimeStamp"
+    }
+}
+
 
