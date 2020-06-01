@@ -41,7 +41,7 @@ struct CardViewModifier : ViewModifier {
     }
     
     private var day : String{
-        return ""x
+        return ""
     }
 }
 
