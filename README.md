@@ -13,9 +13,16 @@
  <img src ="assets/screenshots.png"  />      
  </p>
  
+ 
+  ## Before you install ⚒️
+ - Create an account at https://openweathermap.org/api
+ - get a free API Key ( appid )
+ - copy it 📋
+
  ## Installation 🛠
  - Clone / download this repository.
  - change the bundle identifier in project settings.
+ - paste your appid in Endpoints enum
  - run the app.
  - <b> requires xcode 11.0 + <b>
 
