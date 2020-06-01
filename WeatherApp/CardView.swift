@@ -22,7 +22,7 @@ struct CardView: View {
                     .foregroundColor(.white)
                 Image(weeklyWeather.current.weather.last?.icon ?? "01d")
                     .resizable()
-                    .frame(width: 65, height: 65)
+                    .frame(width: 70, height: 70)
                 Text(weeklyWeather.current.feels_like.round.toString)
                     .font(.system(size: 26, weight: .thin))
                     .foregroundColor(.white)
@@ -35,20 +35,20 @@ struct CardView: View {
 }
 
 struct CardViewModifier : ViewModifier {
-//    var timeStamp : TimeInterval
-//    
-//    init(_ timestamp : TimeInterval) {
-//        self.timeStamp = timestamp
-//    }
+    var timeStamp : TimeInterval
+    
+    init(_ timestamp : TimeInterval) {
+        self.timeStamp = timestamp
+    }
     
     func body(content : Content) -> some View{
         content
-            .background(LinearGradient(gradient: Gradient(colors: [.blue,.yellow]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(LinearGradient(gradient: Gradient(colors: Color.gradientColorOfTheDay(self.day)), startPoint: .topLeading, endPoint: .bottomTrailing))
             .cornerRadius(20)
     }
     
     private var day : String{
-        return ""
+        return Date().dayOfTheWeekFromTimeStamp(self.timeStamp)
     }
 }
 

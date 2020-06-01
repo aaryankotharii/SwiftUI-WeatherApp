@@ -56,47 +56,36 @@ extension Date {
 }
 
 extension Color {
-    init(hex:String){
-        let scanner = Scanner(string: hex)
-        var rgbValue : UInt64 = 0
-        scanner.scanHexInt64(&rgbValue)
-        
-        let r = (rgbValue & 0xff0000) >> 16
-        let g = (rgbValue & 0xff00) >> 8
-        let b = rgbValue & 0xff
-        
-        self.init(red: Double(r), green: Double(g), blue: Double(b))
-    }
     
     static var monday : [Color] {
-        return [Color.init(hex: "232526"),Color.init(hex: "414345")]
+        return [Color(#colorLiteral(red: 0.7411764706, green: 0.5960784314, blue: 0.5490196078, alpha: 1)),Color(#colorLiteral(red: 0.7411764706, green: 0.5960784314, blue: 0.5490196078, alpha: 1))]
     }
     
     static var tuesday : [Color] {
-        return [Color.init(hex: "FF512F"),Color.init(hex: "F09819")]
+        return [Color(#colorLiteral(red: 0.2027700543, green: 0.8196676373, blue: 0.745729506, alpha: 1)),Color(#colorLiteral(red: 0.206817776, green: 0.8314474225, blue: 0.7451662421, alpha: 1))]
     }
     
     static var wednesday : [Color] {
-        return [Color.init(hex: "870000"),Color.init(hex: "190A05")]
+        return [Color(#colorLiteral(red: 0.6666666667, green: 0.8784313725, blue: 0.9254901961, alpha: 1)),Color(#colorLiteral(red: 0.6666666667, green: 0.8784313725, blue: 0.9254901961, alpha: 1))]
     }
     
     static var thursday : [Color] {
-        return [Color.init(hex: "7F00FF"),Color.init(hex: "E100FF")]
+        return [Color(#colorLiteral(red: 0.6588235294, green: 0.8196078431, blue: 0.9176470588, alpha: 1)),Color(#colorLiteral(red: 0.6666666667, green: 0.8784313725, blue: 0.9254901961, alpha: 1))]
     }
     
     static var friday : [Color] {
-        return [Color.init(hex: "AA076B"),Color.init(hex: "61045F")]
+        return [Color(#colorLiteral(red: 0.7411764706, green: 0.5960784314, blue: 0.5490196078, alpha: 1)),Color(#colorLiteral(red: 0.7411764706, green: 0.5960784314, blue: 0.5490196078, alpha: 1))]
     }
     
     static var saturday : [Color] {
-        return [Color.init(hex: "e53935"),Color.init(hex: "e35d5b")]
+        return [Color(#colorLiteral(red: 0.6666666667, green: 0.8784313725, blue: 0.9254901961, alpha: 1)),Color(#colorLiteral(red: 0.6666666667, green: 0.8784313725, blue: 0.9254901961, alpha: 1))]
     }
     
     static var sunday : [Color] {
-        return [Color.init(hex: "2193b0"),Color.init(hex: "6dd5ed")]
+        return [Color(#colorLiteral(red: 0.2274509804, green: 0.2078431373, blue: 0.2509803922, alpha: 1)),Color(#colorLiteral(red: 0.2274509804, green: 0.2078431373, blue: 0.2509803922, alpha: 1))]
     }
     
-    func gradientColorOfTheDay(_ day : String)->[Color]{
+  static func gradientColorOfTheDay(_ day : String)->[Color]{
         switch day{
         case "Monday":
             return Color.monday

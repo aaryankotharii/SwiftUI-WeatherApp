@@ -20,18 +20,16 @@ struct WeeklyWeatherView: View {
             HStack{
                 ForEach(weeklyWeather) {  data in
                     CardView(weeklyWeather: data)
-                        .frame(width: self.width, height: self.value == 0 ? 0 : self.height * 0.6)
+                        .frame(width: self.width, height: self.value == 0 ? 0 : self.height * 0.5)
                         .animation(.easeInOut(duration: 0.5))
-                        .modifier(CardViewModifier())
-                        //.modifier(CardViewModifier(TimeInterval(data.current.dt)))
+                        .modifier(CardViewModifier(TimeInterval(data.current.dt)))
                 }
             }
         }
         .padding(20)
-        .frame(height: self.value == 0 ? 0 : self.height * 0.65)
+        .frame(height: self.value == 0 ? 0 : self.height * 0.55)
         .animation(.easeInOut(duration: 0.5))
     }
 }
-
 
 

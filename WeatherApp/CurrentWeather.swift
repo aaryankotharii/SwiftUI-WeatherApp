@@ -19,13 +19,13 @@ struct CurrentWeather: View {
                 .foregroundColor(.white)
             .bold()
             HStack{
-                Text("\(weather?.main.temp.round ?? 0)")
+                Text("\(weather?.main.temp.round ?? 0)°")
                     .foregroundColor(.white)
                     .fontWeight(.heavy)
-                    .font(.system(size: 20))
+                    .font(.system(size: 50))
                 Image(weather?.weather.last?.icon ?? "01d")
                     .resizable()
-                    .frame(width: 90, height: 90)
+                    .frame(width: 130, height: 130)
                     .aspectRatio(contentMode: .fit)
             }
             Text("\(weather?.weather.last?.description ?? "Unknown")")
@@ -33,7 +33,7 @@ struct CurrentWeather: View {
                 .font(.body)
             
         }.frame(width: height, height: height)
-            .background(LinearGradient(gradient: Gradient(colors: [.blue,.purple]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.2108200788, green: 0.7332627177, blue: 0.7576882243, alpha: 1)),Color(#colorLiteral(red: 0.2065997124, green: 0.8275157213, blue: 0.7494649887, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing))
     }
 }
 
