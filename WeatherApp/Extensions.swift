@@ -48,7 +48,7 @@ extension Date {
         return dateformatter.string(from: self)
     }
     
-    func dayOfTheWeekFromTimeStamp(_ timestamp : TimeInterval)-> String {
+   public func dayOfTheWeekFromTimeStamp(_ timestamp : TimeInterval)-> String {
         let date = Date.dateFromUnixTimeStamp(timestamp)
         return date.day
     }

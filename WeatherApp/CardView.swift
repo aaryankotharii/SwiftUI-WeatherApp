@@ -12,7 +12,7 @@ struct CardView: View {
     var weeklyWeather : WeeklyWeather
     var body: some View {
         VStack{
-            Text("dayofweelfromtimestamp \(weeklyWeather.current.dt).timestamp")
+            Text(Date().dayOfTheWeekFromTimeStamp(TimeInterval(weeklyWeather.current.dt)))
                 .font(.title)
                 .foregroundColor(.white)
             HStack{
@@ -41,7 +41,7 @@ struct CardViewModifier : ViewModifier {
     }
     
     private var day : String{
-        return "dayOfWeekFromTimeStamp"
+        return ""x
     }
 }
 
