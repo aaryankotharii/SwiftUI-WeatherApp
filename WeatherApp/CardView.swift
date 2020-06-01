@@ -17,8 +17,14 @@ struct CardView: View {
                 .foregroundColor(.white)
             HStack{
                 Text(weeklyWeather.current.temp.round.toString + "°")
-                Text(weeklyWeather.current.feels_like.round.toString)
                     .font(.title)
+                    .bold()
+                    .foregroundColor(.white)
+                Image(weeklyWeather.current.weather.last?.icon ?? "01d")
+                    .resizable()
+                    .frame(width: 65, height: 65)
+                Text(weeklyWeather.current.feels_like.round.toString)
+                    .font(.system(size: 26, weight: .thin))
                     .foregroundColor(.white)
             }
             Text(weeklyWeather.current.weather.last?.description ?? "")
@@ -29,10 +35,11 @@ struct CardView: View {
 }
 
 struct CardViewModifier : ViewModifier {
-    var timeStamp : TimeInterval
-    init(_ timestamp : TimeInterval) {
-        self.timeStamp = timestamp
-    }
+//    var timeStamp : TimeInterval
+//    
+//    init(_ timestamp : TimeInterval) {
+//        self.timeStamp = timestamp
+//    }
     
     func body(content : Content) -> some View{
         content

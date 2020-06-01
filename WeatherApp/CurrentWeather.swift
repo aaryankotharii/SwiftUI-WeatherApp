@@ -23,6 +23,10 @@ struct CurrentWeather: View {
                     .foregroundColor(.white)
                     .fontWeight(.heavy)
                     .font(.system(size: 20))
+                Image(weather?.weather.last?.icon ?? "01d")
+                    .resizable()
+                    .frame(width: 90, height: 90)
+                    .aspectRatio(contentMode: .fit)
             }
             Text("\(weather?.weather.last?.description ?? "Unknown")")
                 .foregroundColor(.white)
@@ -33,8 +37,16 @@ struct CurrentWeather: View {
     }
 }
 
-struct CurrentWeather_Previews: PreviewProvider {
-    static var previews: some View {
-        CurrentWeather()
+struct currentViewModifier : ViewModifier{
+    private var radius : CGFloat = 20
+    private var xAxis : CGFloat = 20
+    private var yAxis : CGFloat = 20
+    
+    func body(content: Content) -> some View {
+        content
+            .cornerRadius(radius)
+            .shadow(color: .gray, radius: radius, x: xAxis, y: yAxis)
+            .opacity(0.8)
+        
     }
 }

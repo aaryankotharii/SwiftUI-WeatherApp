@@ -19,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
             GeometryReader { gr in
-                CurrentWeather(weather: self.weather.current, height: self.selected == 0 ? gr.size.height : (gr.size.height*0.5)).animation(.easeInOut(duration: 0.5))
+                CurrentWeather(weather: self.weather.current, height: self.selected == 0 ? gr.size.height : (gr.size.height*0.75)).modifier(currentViewModifier()).animation(.easeInOut(duration: 0.5))
             }
             WeeklyWeatherView(weeklyWeather: self.weeklyWeather.weather ?? [], value: selected, height : height * 0.5)
             Picker("", selection: $selected) {
