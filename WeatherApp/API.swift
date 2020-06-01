@@ -104,19 +104,3 @@ extension Date {
         return value
     }
 }
-
-class MapClient {
-    class func TextToLocation(_ address : String, completion: @escaping (CLLocation?, Error?) -> Void){
-        
-        let geoCoder = CLGeocoder()
-        
-        geoCoder.geocodeAddressString(address) { (placemarks, error) in
-            guard let placemarks = placemarks, let location = placemarks.first?.location
-                else {
-                    completion(nil,error)
-                    return
-            }
-            completion(location,nil)
-        }
-    }
-}
