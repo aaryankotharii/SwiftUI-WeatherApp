@@ -14,8 +14,8 @@ struct WeeklyWeather : Codable {
 }
 
 struct Current : Codable {
-    let dt, sunrise, sunset, temp, pressure, humidity, clouds, wind_deg, visibility : Int
-    let feels_like, dew_point, uvi, wind_speed: Double
+    let dt, sunrise, sunset, pressure, humidity, clouds, wind_deg, visibility : Int
+    let feels_like, dew_point, uvi, wind_speed,temp: Double
     let weather : [WeeklyData]
 }
 
